@@ -18,7 +18,8 @@
     "event-stream": "^3.3.4",
     "gulp": "^4.0.0",
     "gulp-util": "^3.0.8",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "plugin-error": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^1.10.0",

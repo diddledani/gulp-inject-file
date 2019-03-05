@@ -2,8 +2,7 @@ const es = require('event-stream')
 const fs = require('fs')
 const _ = require('lodash')
 const path = require('path')
-const gutil = require('gulp-util')
-const PluginError = gutil.PluginError
+const PluginError = require('plugin-error')
 
 const PLUGIN_NAME = 'gulp-inject-file'
 
