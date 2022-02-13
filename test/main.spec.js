@@ -3,14 +3,14 @@ var fs = require('fs');
 var path = require('path');
 var es = require('event-stream');
 var expect = require('chai').expect;
-var gutil = require('gulp-util');
+var Vinyl = require('vinyl');
 var sinon = require('sinon');
 require('mocha');
 
 describe('gulp-inject-file', function() {
     describe('injectFilePlugin()', function() {
         it('should inject file by pattern', function(done) {
-            var file = new gutil.File({
+            var file = new Vinyl({
                 path: 'test/fixtures/inject/main.xml',
                 cwd: 'test/fixtures/inject/',
                 base: 'test/fixtures/inject/',
@@ -33,7 +33,7 @@ describe('gulp-inject-file', function() {
         });
 
         it('should inject file using default', function(done) {
-            var file = new gutil.File({
+            var file = new Vinyl({
                 path: 'test/fixtures/inject/main.xml',
                 cwd: 'test/fixtures/inject/',
                 base: 'test/fixtures/inject/',
@@ -54,7 +54,7 @@ describe('gulp-inject-file', function() {
         });
 		
 		it('should inject file within a line by pattern', function(done) {
-			var file = new gutil.File({
+			var file = new Vinyl({
 				path: 'test/fixtures/withinline/main.xml',
 				cwd: 'test/fixtures/withinline/',
 				base: 'test/fixtures/withinline/',
@@ -77,7 +77,7 @@ describe('gulp-inject-file', function() {
 		});
 		
 		it('should inject file within a line using default pattern', function(done) {
-			var file = new gutil.File({
+			var file = new Vinyl({
 				path: 'test/fixtures/withinline/main.xml',
 				cwd: 'test/fixtures/withinline/',
 				base: 'test/fixtures/withinline/',
@@ -98,7 +98,7 @@ describe('gulp-inject-file', function() {
 		});
 
         it('should inject file with path including at sign or underscore by pattern', function(done) {
-            var file = new gutil.File({
+            var file = new Vinyl({
                 path: 'test/fixtures/inject/at-sign-underscore.xml',
                 cwd: 'test/fixtures/inject/',
                 base: 'test/fixtures/inject/',
@@ -124,7 +124,7 @@ describe('gulp-inject-file', function() {
             var file, transformMock, pattern, options;
 
             beforeEach(function() {
-                file = new gutil.File({
+                file = new Vinyl({
                     path: 'test/fixtures/transform/main.xml',
                     cwd: 'test/fixtures/transform/',
                     base: 'test/fixtures/transform/',
